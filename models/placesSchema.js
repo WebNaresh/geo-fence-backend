@@ -11,5 +11,5 @@ const Map = new mongoose.Schema({
     unique: true,
   },
 });
-const MapModel = mongoose.model("User", Map);
+const MapModel = mongoose.model("Map", Map);
 module.exports = { MapModel };

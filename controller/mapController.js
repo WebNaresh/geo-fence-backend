@@ -13,7 +13,24 @@ exports.addName = catchAssyncError(async (req, res, next) => {
 
     res.status(200).json({
       success: true,
-      message: `Welcome ${name}`,
+      message: `Your place ${name} is added successfully`,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+
+exports.mapInfo = catchAssyncError(async (req, res, next) => {
+  try {
+    const name = req.params.name;
+    const mapInfo = await MapModel.findOne({ name: name });
+    res.status(200).json({
+      success: true,
+      mapInfo,
     });
   } catch (error) {
     console.error(error);
