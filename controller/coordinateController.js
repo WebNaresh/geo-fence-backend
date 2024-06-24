@@ -20,10 +20,7 @@ exports.addCoordinateToParent = catchAssyncError(async (req, res, next) => {
     parentId,
     coordinate: coordinates,
   });
-  console.log(
-    `🚀 ~ file: coordinateController.js:43 ~ coordinateInstance:`,
-    coordinateInstance
-  );
+
   res.status(200).json({
     success: true,
     message: `Your GeoFencing is added for location ${checkParent?.name}`,
