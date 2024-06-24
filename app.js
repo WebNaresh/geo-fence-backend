@@ -15,6 +15,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/api", route);
 app.use("/message", route2);
 app.use("/api", coordinateRoute);
+app.use("/", (req, res) => {
+  res.send("Server is working");
+});
 app.use(error);
 module.exports = app;
 // npm i express cookie-parser body-parser bcryptjs
